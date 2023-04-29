@@ -3,7 +3,12 @@ guid: acbf1884ad6648840ae7c5b89d303d7e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Forklift
+    second: {fileID: 2100000, guid: 33348b63397f9c144b54b6584994d2b7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
