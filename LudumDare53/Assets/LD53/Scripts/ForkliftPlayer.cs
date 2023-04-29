@@ -40,11 +40,11 @@ public class ForkliftPlayer : MonoBehaviour
     private bool lastLiftUp = false;
     public float liftPercent;
 
-    private void Start()
+    private void Awake()
     {
         Lift.transform.position = LiftTop.position;
         Physics.IgnoreLayerCollision(10, 11);
-        GetComponent<Rigidbody>().centerOfMass = centerOfMass.position;
+        GetComponent<Rigidbody>().centerOfMass = centerOfMass.localPosition;
     }
 
     private void Update()
