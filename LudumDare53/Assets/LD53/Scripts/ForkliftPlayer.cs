@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -25,6 +26,7 @@ public class ForkliftPlayer : MonoBehaviour
     [SerializeField] private Transform backLeftT;
     [SerializeField] private Transform frontRightT;
     [SerializeField] private Transform backRightT;
+    [SerializeField] private Transform centerOfMass;
 
     [Header("Lift")]
     [SerializeField] private GameObject Lift;
@@ -42,6 +44,7 @@ public class ForkliftPlayer : MonoBehaviour
     {
         Lift.transform.position = LiftTop.position;
         Physics.IgnoreLayerCollision(10, 11);
+        GetComponent<Rigidbody>().centerOfMass = centerOfMass.position;
     }
 
     private void Update()
