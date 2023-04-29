@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
+    public int boxesCollected;
 
     private void Awake()
     {
@@ -23,10 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            EndOrder();
-        }
+        
     }
 
     public void CreateOrder()
@@ -40,25 +39,29 @@ public class GameManager : MonoBehaviour
         {
             newOrder.OrderRequirements.Add(boxes[Random.Range(0, boxes.Length)]);
         }
+        newOrder.reqBoxes = newOrder.OrderRequirements.Count;
         currentOrder = newOrder;
-        StartNewOrder();
+       StartCoroutine(StartNewOrder());
     }
 
-    private void StartNewOrder()
+
+    private IEnumerator StartNewOrder()
     {
         Debug.Log("Starting Order");
         for (int i = 0; i < currentOrder.OrderRequirements.Count; i++)
         {
-            bool goodSpawnPoint = true;
+            
             GameObject spawnPoint;
-
+            bool goodSpawnPoint;
             // Verify Spawn Point
             do
             {
+                goodSpawnPoint = true;
+                
                 Debug.Log("Attempting SpawnPoints");
                 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-                 
-                for(int b = 0; b < usedSpawnPoints.Length; b++)
+
+                for (int b = 0; b < usedSpawnPoints.Length; b++)
                 {
                     if (usedSpawnPoints[b] == spawnPoint)
                     {
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
                         break;
                     }
                 }
+                yield return new WaitForEndOfFrame();
             } while (!goodSpawnPoint);
 
             for (int b = 0; b < usedSpawnPoints.Length; b++)
@@ -82,7 +86,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void EndOrder()
+    public void EndOrder()
     {
         Debug.Log("Finished Order");
         for (int i = 0; i < usedSpawnPoints.Length; i++)
@@ -90,19 +94,41 @@ public class GameManager : MonoBehaviour
             usedSpawnPoints[i] = null;
         }
 
-        //for (int a = 0; a< spawnedBoxes.Count; a++)
-        //{
-        //    Destroy(spawnedBoxes[a]);
-        //}
-        //spawnedBoxes.Clear();
+        for (int a = 0; a < spawnedBoxes.Count; a++)
+        {
+            Destroy(spawnedBoxes[a]);
+        }
+        spawnedBoxes.Clear();
+    }
+    public void CheckCollectedBoxes(List<GameObject> collectedBoxes)
+    {
+        boxesCollected = 0;
+        for (int a = 0; a < collectedBoxes.Count; a++)
+        {
+            for (int i = 0; i < spawnedBoxes.Count; i++)
+            {
+                if (collectedBoxes[a] == spawnedBoxes[i])
+                {
+                    Debug.Log("Matching Box");
+                    boxesCollected++;
+                }
+            }
+        }
 
-        //CreateOrder();
+        if(boxesCollected == currentOrder.reqBoxes)
+        {
+            currentOrder.orderComplete = true;
+            Debug.Log("Order Complete");
+        }
     }
 }
+
+
 
 public class Order
 {
     public List<GameObject> OrderRequirements = new List<GameObject>();
-    public bool metRequirements = false;
+    public int reqBoxes;
+    public bool orderComplete;
 
 }
