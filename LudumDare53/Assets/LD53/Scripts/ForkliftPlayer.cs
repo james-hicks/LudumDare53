@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 public class ForkliftPlayer : MonoBehaviour
 {
@@ -33,13 +34,21 @@ public class ForkliftPlayer : MonoBehaviour
     bool liftDown;
 
     private float curLiftSpeed;
-    private bool lastLiftUp = true;
+    private bool lastLiftUp = false;
     public float liftPercent;
 
     private void Start()
     {
-        Lift.transform.position = LiftBottom.position;
+        Lift.transform.position = LiftTop.position;
         Physics.IgnoreLayerCollision(10, 11);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            gameObject.transform.position = Vector3.up;
+        }
     }
 
     private void FixedUpdate()
