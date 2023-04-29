@@ -405,8 +405,8 @@ MonoBehaviour:
   backRight: {fileID: 9144802046085123577}
   frontLeftT: {fileID: 2060871913683365094}
   backLeftT: {fileID: 5167700609444984967}
-  frontRightT: {fileID: 1038103254379196643}
-  backRightT: {fileID: 6038898997980781045}
+  frontRightT: {fileID: 6038898997980781045}
+  backRightT: {fileID: 1038103254379196643}
   centerOfMass: {fileID: 83398285}
   Lift: {fileID: 7293909812210477859}
   LiftBottom: {fileID: 3059016623535146978}
