@@ -45,5 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minItems: 1
-  maxItems: 6
-  boxes: []
+  maxItems: 4
+  boxes:
+  - {fileID: 4254677883772798200, guid: 2ecda45139609784fa80a0d848745377, type: 3}
+  - {fileID: 2262506590373495932, guid: e3d2882dbbcf7c44f95f8a7a29f0554b, type: 3}
+  - {fileID: 2184214255075185304, guid: 57926e42c89b92642ba011ff2c557324, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  usedSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
