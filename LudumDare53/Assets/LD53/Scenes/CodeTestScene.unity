@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &205368043 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2060871913683365094, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9144802044962016753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &288349377
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386371560
 GameObject:
@@ -349,7 +355,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 047ede4deac7d654a88e6b19b4685804,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 047ede4deac7d654a88e6b19b4685804,
         type: 3}
@@ -359,7 +365,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 047ede4deac7d654a88e6b19b4685804,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.166
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 047ede4deac7d654a88e6b19b4685804,
         type: 3}
@@ -529,7 +535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &688271427
 Rigidbody:
@@ -567,7 +573,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ea0621c934b5c484f9bfc3640c60733e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea0621c934b5c484f9bfc3640c60733e,
         type: 3}
@@ -756,6 +762,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!4 &1626038272 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5167700609444984967, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9144802044962016753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9144802044962016753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -839,6 +851,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Forklift
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144802045947774296, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+        type: 3}
+      propertyPath: backLeftT
+      value: 
+      objectReference: {fileID: 1626038272}
+    - target: {fileID: 9144802045947774296, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+        type: 3}
+      propertyPath: frontLeftT
+      value: 
+      objectReference: {fileID: 205368043}
+    - target: {fileID: 9144802045947774296, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+        type: 3}
+      propertyPath: motorForce
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144802045947774296, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
+        type: 3}
+      propertyPath: maxSteeringAngle
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77137c08ae02e6b4fa7aa6a694dd035c, type: 3}

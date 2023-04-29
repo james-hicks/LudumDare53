@@ -363,16 +363,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBreaking: 0
-  motorForce: 150
+  motorForce: 75
   breakForce: 100
-  maxSteeringAngle: 30
+  maxSteeringAngle: 20
   currentBreakForce: 0
   frontLeft: {fileID: 9144802045984487674}
   backLeft: {fileID: 9144802045486327725}
   frontRight: {fileID: 9144802044998001157}
   backRight: {fileID: 9144802046085123577}
-  frontLeftT: {fileID: 5167700609444984967}
-  backLeftT: {fileID: 2060871913683365094}
+  frontLeftT: {fileID: 2060871913683365094}
+  backLeftT: {fileID: 5167700609444984967}
   frontRightT: {fileID: 1038103254379196643}
   backRightT: {fileID: 6038898997980781045}
   Lift: {fileID: 7293909812210477859}
@@ -815,7 +815,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293909812210477859}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c6ebbd987f7316d4d958f86ffd909cd0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -828,7 +828,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293909812210477859}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c6ebbd987f7316d4d958f86ffd909cd0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
