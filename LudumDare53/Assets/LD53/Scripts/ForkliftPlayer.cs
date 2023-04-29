@@ -51,7 +51,7 @@ public class ForkliftPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            gameObject.transform.position = Vector3.up;
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, Vector3.up.y, gameObject.transform.position.z);
             gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
     }
