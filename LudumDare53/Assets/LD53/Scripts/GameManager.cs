@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] usedSpawnPoints;
     public Order currentOrder;
 
+    [Header("Debug")]
+    public List<GameObject> spawnedBoxes = new List<GameObject>();
+
     private void Awake()
     {
         CreateOrder();
@@ -20,17 +23,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EndOrder();
+        }
     }
 
     public void CreateOrder()
     {
         Debug.Log("Creating Order");
         Order newOrder = new Order();
+
         int orderLength = Random.Range(minItems, maxItems);
+        Debug.Log("Order Length =" + orderLength);
         for(int i = 0; i < orderLength; i++)
         {
-
             newOrder.OrderRequirements.Add(boxes[Random.Range(0, boxes.Length)]);
         }
         currentOrder = newOrder;
@@ -39,21 +46,24 @@ public class GameManager : MonoBehaviour
 
     private void StartNewOrder()
     {
-        for(int i = 0; i < currentOrder.OrderRequirements.Count; i++)
+        Debug.Log("Starting Order");
+        for (int i = 0; i < currentOrder.OrderRequirements.Count; i++)
         {
-            Debug.Log("Starting Order");
             bool goodSpawnPoint = true;
             GameObject spawnPoint;
 
             // Verify Spawn Point
             do
             {
+                Debug.Log("Attempting SpawnPoints");
                 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-                for(int b = 0; b< usedSpawnPoints.Length; b++)
+                 
+                for(int b = 0; b < usedSpawnPoints.Length; b++)
                 {
-                    if (usedSpawnPoints[i] == spawnPoint)
+                    if (usedSpawnPoints[b] == spawnPoint)
                     {
                         goodSpawnPoint = false;
+                        Debug.Log("Bad Spawnpoint");
                         break;
                     }
                 }
@@ -64,10 +74,11 @@ public class GameManager : MonoBehaviour
                 if (usedSpawnPoints[b] == null)
                 {
                     usedSpawnPoints[b] = spawnPoint;
+                    break;
                 }
             }
 
-            GameObject spawnedBox = Instantiate(currentOrder.OrderRequirements[i], spawnPoint.transform.position, Quaternion.identity);
+            spawnedBoxes.Add(Instantiate(currentOrder.OrderRequirements[i], spawnPoint.transform.position, Quaternion.identity));
         }
     }
 
@@ -79,13 +90,19 @@ public class GameManager : MonoBehaviour
             usedSpawnPoints[i] = null;
         }
 
-        CreateOrder();
+        //for (int a = 0; a< spawnedBoxes.Count; a++)
+        //{
+        //    Destroy(spawnedBoxes[a]);
+        //}
+        //spawnedBoxes.Clear();
+
+        //CreateOrder();
     }
 }
 
 public class Order
 {
-    public List<GameObject> OrderRequirements;
+    public List<GameObject> OrderRequirements = new List<GameObject>();
     public bool metRequirements = false;
 
 }
