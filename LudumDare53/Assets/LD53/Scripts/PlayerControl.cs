@@ -31,6 +31,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Lift.transform.position = LiftBottom.position;
+        Physics.IgnoreLayerCollision(10, 11);
     }
 
     private void Update()
