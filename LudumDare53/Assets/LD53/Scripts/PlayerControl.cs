@@ -43,7 +43,6 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //TODO: If grounded check
         rb.AddForce(transform.forward * playerInput.y * playerSpeed * Time.deltaTime, ForceMode.Impulse);
         //transform.Rotate(transform.up, rotationSpeed * playerInput.x * Time.deltaTime);
         Quaternion deltaRotation = Quaternion.Euler(Vector3.up * (rotationSpeed * playerInput.x * Time.deltaTime));
@@ -60,7 +59,6 @@ public class PlayerControl : MonoBehaviour
 
             liftPercent += Time.deltaTime * liftSpeed;
             Lift.transform.position = Vector3.Lerp(LiftBottom.position, LiftTop.position, liftPercent);
-            //Lift.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(LiftBottom.position, LiftTop.position, liftPercent));
         }
 
         if (liftDown)
@@ -73,14 +71,10 @@ public class PlayerControl : MonoBehaviour
 
             liftPercent += Time.deltaTime * liftSpeed;
             Lift.transform.position = Vector3.Lerp(LiftTop.position, LiftBottom.position, liftPercent);
-            //Lift.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(LiftTop.position, LiftBottom.position, liftPercent));
 
         }
         liftPercent = Mathf.Clamp(liftPercent, 0, 1);
-        //if (!liftDown && !liftUp)
-        //{
-        //    Lift.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //}
+
 
 
     }
