@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
         }
 
         currentOrder = newOrder;
+        StartNewOrder();
+    }
+
+    private void StartNewOrder()
+    {
+        throw new System.NotImplementedException();
     }
 }
 

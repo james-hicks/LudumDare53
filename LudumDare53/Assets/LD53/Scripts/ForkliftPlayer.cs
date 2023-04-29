@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using TreeEditor;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Editor;
 using UnityEngine.InputSystem.LowLevel;
 
 public class ForkliftPlayer : MonoBehaviour
@@ -49,11 +51,15 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) Cursor.lockState = CursorLockMode.Locked;
+        else if (Input.GetKeyDown(KeyCode.Mouse1)) Cursor.lockState = CursorLockMode.None;
+
         if (Input.GetKeyDown(KeyCode.T))
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, Vector3.up.y, gameObject.transform.position.z);
             gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
+
     }
 
     private void FixedUpdate()

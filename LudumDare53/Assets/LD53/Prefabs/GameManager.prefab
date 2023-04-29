@@ -46,4 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minItems: 1
   maxItems: 6
-  boxes: []
+  boxes:
+  - {fileID: 0}
+  - {fileID: 0}
