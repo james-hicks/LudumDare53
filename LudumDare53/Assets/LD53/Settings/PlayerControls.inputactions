@@ -15,21 +15,39 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Lift Up",
+                    "name": "LiftUpPress",
                     "type": "Button",
                     "id": "f9d2e697-c17d-4886-86e8-7259d13e2d26",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Lift Down",
+                    "name": "LiftUpRelease",
+                    "type": "Button",
+                    "id": "5038c6a4-ce1b-4efa-98e2-208da6b226f7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LiftDownPress",
                     "type": "Button",
                     "id": "80b55e20-7156-4846-8771-40a409b8fb63",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LiftDownRelease",
+                    "type": "Button",
+                    "id": "65617e99-7e61-47c2-98fb-f4118adefee7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 },
                 {
@@ -116,7 +134,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lift Up",
+                    "action": "LiftUpPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,7 +145,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lift Up",
+                    "action": "LiftUpPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -138,7 +156,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lift Down",
+                    "action": "LiftDownPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -149,7 +167,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lift Down",
+                    "action": "LiftDownPress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -183,6 +201,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "76bd86d2-e842-44cd-95c1-a7cc3a12f175",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LiftUpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae2eba0c-55d0-4dfc-a103-8e703dffa56d",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LiftUpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6df162e5-edce-4f19-8bcb-10db9a485f6c",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LiftDownRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13601fa4-21d4-4f27-99d4-9c78e548f3b7",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LiftDownRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
