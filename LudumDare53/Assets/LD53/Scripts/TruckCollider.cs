@@ -12,15 +12,14 @@ public class TruckCollider : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
-    private void Update()
+    private void Start()
     {
-        if(gameManager.currentOrder.orderComplete && !PlayerInTruck)
-        {
-            Leave();
-        }
+        StartCoroutine(CheckOrderDone());
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -50,9 +49,25 @@ public class TruckCollider : MonoBehaviour
         }
     }
 
+    private IEnumerator CheckOrderDone()
+    {
+        while(true)
+        {
+            if (gameManager.currentOrder.orderComplete)
+            {
+                yield return new WaitForSeconds(2f);
+                if(!PlayerInTruck && gameManager.currentOrder.orderComplete)
+                {
+                    Leave();
+                }
+            }
+            yield return null;
+        }
+    }
+
     public void Leave()
     {
-
+        EndOrder();
     }
 
     public void EndOrder()

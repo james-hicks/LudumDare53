@@ -99,7 +99,9 @@ public class GameManager : MonoBehaviour
             Destroy(spawnedBoxes[a]);
         }
         spawnedBoxes.Clear();
+        CreateOrder();
     }
+
     public void CheckCollectedBoxes(List<GameObject> collectedBoxes)
     {
         boxesCollected = 0;
