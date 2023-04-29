@@ -22,7 +22,8 @@ public class PlayerControl : MonoBehaviour
     bool liftUp;
     bool liftDown;
 
-    bool lastLiftUp = true;
+    private float curLiftSpeed;
+    private bool lastLiftUp = true;
     public float liftPercent;
     private Vector2 playerInput;
     private Rigidbody rb;
@@ -44,7 +45,9 @@ public class PlayerControl : MonoBehaviour
     {
         //TODO: If grounded check
         rb.AddForce(transform.forward * playerInput.y * playerSpeed * Time.deltaTime, ForceMode.Impulse);
-        transform.Rotate(transform.up, rotationSpeed * playerInput.x * Time.deltaTime);
+        //transform.Rotate(transform.up, rotationSpeed * playerInput.x * Time.deltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(Vector3.up * (rotationSpeed * playerInput.x * Time.deltaTime));
+        rb.MoveRotation(transform.rotation * deltaRotation);
 
         if (liftUp)
         {
@@ -53,24 +56,33 @@ public class PlayerControl : MonoBehaviour
                 liftPercent = 1 - liftPercent;
                 lastLiftUp = true;
             }
-            
+
 
             liftPercent += Time.deltaTime * liftSpeed;
             Lift.transform.position = Vector3.Lerp(LiftBottom.position, LiftTop.position, liftPercent);
+            //Lift.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(LiftBottom.position, LiftTop.position, liftPercent));
         }
 
         if (liftDown)
         {
-            if(lastLiftUp)
+            if (lastLiftUp)
             {
                 liftPercent = 1 - liftPercent;
-                lastLiftUp= false;
+                lastLiftUp = false;
             }
 
             liftPercent += Time.deltaTime * liftSpeed;
             Lift.transform.position = Vector3.Lerp(LiftTop.position, LiftBottom.position, liftPercent);
+            //Lift.GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(LiftTop.position, LiftBottom.position, liftPercent));
+
         }
         liftPercent = Mathf.Clamp(liftPercent, 0, 1);
+        //if (!liftDown && !liftUp)
+        //{
+        //    Lift.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //}
+
+
     }
 
     #region InputActions
