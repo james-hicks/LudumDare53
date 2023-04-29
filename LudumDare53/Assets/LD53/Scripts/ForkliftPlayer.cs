@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -48,6 +49,7 @@ public class ForkliftPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             gameObject.transform.position = Vector3.up;
+            gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
         }
     }
 
