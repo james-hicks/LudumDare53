@@ -58,11 +58,11 @@ public class GameManager : MonoBehaviour
             }
             else if(newBox <= 5) 
             {
-                boxTypes[2]++;
+                boxTypes[1]++;
             }
             else
             {
-                boxTypes[1]++;
+                boxTypes[2]++;
             }
             newOrder.OrderRequirements.Add(boxes[newBox]);
         }

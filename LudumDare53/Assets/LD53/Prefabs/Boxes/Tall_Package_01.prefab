@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4271972770828458618}
   - component: {fileID: 5952125373725630468}
   - component: {fileID: 5421928704353727950}
+  - component: {fileID: 4364631292103181590}
   m_Layer: 9
   m_Name: Tall_Package_01
   m_TagString: Box
@@ -115,6 +116,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9354925, y: 1.4143019, z: 0.9681814}
   m_Center: {x: 0.0072266906, y: 0.70223486, z: 0.018930674}
+--- !u!114 &4364631292103181590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326642375414299567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0.23921567, g: 1, b: 0.34185424, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &6297364940045326748
 PrefabInstance:
   m_ObjectHideFlags: 0
