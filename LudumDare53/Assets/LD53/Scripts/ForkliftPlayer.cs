@@ -38,6 +38,8 @@ public class ForkliftPlayer : MonoBehaviour
     bool liftUp;
     bool liftDown;
 
+    [Header("HUD")]
+    [SerializeField] private Animator HUDAnimator;
     private float curLiftSpeed;
     private bool lastLiftUp = false;
     public float liftPercent;
@@ -53,13 +55,6 @@ public class ForkliftPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)) Cursor.lockState = CursorLockMode.Locked;
         else if (Input.GetKeyDown(KeyCode.Mouse1)) Cursor.lockState = CursorLockMode.None;
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, Vector3.up.y, gameObject.transform.position.z);
-            gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
-        }
-
     }
 
     private void FixedUpdate()
@@ -176,6 +171,21 @@ public class ForkliftPlayer : MonoBehaviour
     private void OnLiftDownRelease(InputValue value)
     {
         liftDown = false;
+    }
+
+    private void OnReset(InputValue value)
+    {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, Vector3.up.y, gameObject.transform.position.z);
+        gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+    }
+
+    private void OnSeeDeliveryPress(InputValue value)
+    {
+        HUDAnimator.SetBool("ShowNote", true);
+    }
+    private void OnSeeDeliveryRelease(InputValue value)
+    {
+        HUDAnimator.SetBool("ShowNote", false);
     }
     #endregion
 }
