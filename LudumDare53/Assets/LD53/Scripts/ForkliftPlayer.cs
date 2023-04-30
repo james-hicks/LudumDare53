@@ -18,6 +18,7 @@ public class ForkliftPlayer : MonoBehaviour
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteeringAngle;
+    [SerializeField] private Transform respawnPoint;
     public float currentBreakForce;
     private float currrentSteeringAngle;
 
@@ -176,8 +177,8 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void OnReset(InputValue value)
     {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, Vector3.up.y, gameObject.transform.position.z);
-        gameObject.transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+        gameObject.transform.position = respawnPoint.position;
+        gameObject.transform.rotation = respawnPoint.rotation;
     }
 
     private void OnSeeDeliveryPress(InputValue value)
