@@ -8,6 +8,8 @@ public class TruckCollider : MonoBehaviour
     private GameManager gameManager;
     public List<GameObject> collectedBoxes = new List<GameObject>();
     public bool PlayerInTruck;
+    [SerializeField] private Animator truckAnimator;
+    private bool left = false;
 
     private void Awake()
     {
@@ -58,7 +60,12 @@ public class TruckCollider : MonoBehaviour
                 yield return new WaitForSeconds(2f);
                 if(!PlayerInTruck && gameManager.currentOrder.orderComplete)
                 {
-                    Leave();
+                    if (!left)
+                    {
+                        left = true;
+                        Leave();
+                    }
+
                 }
             }
             yield return null;
@@ -67,11 +74,17 @@ public class TruckCollider : MonoBehaviour
 
     public void Leave()
     {
-        EndOrder();
+       
+        truckAnimator.SetTrigger("ResetTruck");
     }
 
     public void EndOrder()
     {
         gameManager.EndOrder();
+    }
+
+    public void StartNewLoad()
+    {
+        gameManager.CreateOrder();
     }
 }

@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
         }
         spawnedBoxes.Clear();
         ordersCompleted++;
-        CreateOrder();
     }
 
     public void CheckCollectedBoxes(List<GameObject> collectedBoxes)
