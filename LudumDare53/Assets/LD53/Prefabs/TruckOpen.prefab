@@ -90,6 +90,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09492624, y: 2.110029, z: 4.5174026}
   m_Center: {x: 0.45253688, y: 0.5046958, z: -0.099209785}
+--- !u!1 &1554412601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554412602}
+  - component: {fileID: 1554412603}
+  m_Layer: 0
+  m_Name: wallright (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554412602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554412601}
+  m_LocalRotation: {x: -2.842171e-14, y: -0.7071067, z: 2.842171e-14, w: 0.7071069}
+  m_LocalPosition: {x: 0.944, y: 1.532, z: 0.558}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8342019956051107426}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &1554412603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554412601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09492624, y: 2.110029, z: 2.321219}
+  m_Center: {x: 0.452537, y: 0.5046958, z: 0.998882}
 --- !u!1 &2026185282
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,17 +294,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.762
+      value: -19.499
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.002
+      value: 0.00009918213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.53
+      value: -48.661
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
@@ -339,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
       propertyPath: m_Name
-      value: Truck
+      value: TruckOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1828750106365525385, guid: a21b22819bad4bf4ba4bfb4e74f6bbdc,
         type: 3}
