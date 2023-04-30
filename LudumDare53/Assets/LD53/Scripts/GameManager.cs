@@ -7,12 +7,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    [Range(0, 10)][SerializeField] private int minItems;
     [Range(0, 10)][SerializeField] private int maxItems;
     [SerializeField] private GameObject[] boxes;
     [SerializeField] private GameObject[] spawnPoints;
     [SerializeField] private GameObject[] usedSpawnPoints;
     public Order currentOrder;
+    [SerializeField] private int ordersCompleted = 0; 
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
@@ -23,22 +23,31 @@ public class GameManager : MonoBehaviour
         CreateOrder();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void CreateOrder()
     {
-        Debug.Log("Creating Order");
         Order newOrder = new Order();
+        int orderLength;
 
-        int orderLength = Random.Range(minItems, maxItems);
+        if (ordersCompleted == 0)
+        {
+            orderLength = 1;
+        }else if (ordersCompleted <= 2)
+        {
+            orderLength = Random.Range(2,3);
+        }
+        else
+        {
+            orderLength = Random.Range(2, maxItems);
+        }
+
+
         Debug.Log("Order Length =" + orderLength);
+
         for(int i = 0; i < orderLength; i++)
         {
             newOrder.OrderRequirements.Add(boxes[Random.Range(0, boxes.Length)]);
         }
+
         newOrder.reqBoxes = newOrder.OrderRequirements.Count;
         currentOrder = newOrder;
        StartCoroutine(StartNewOrder());
@@ -47,7 +56,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartNewOrder()
     {
-        Debug.Log("Starting Order");
         for (int i = 0; i < currentOrder.OrderRequirements.Count; i++)
         {
             
@@ -99,6 +107,7 @@ public class GameManager : MonoBehaviour
             Destroy(spawnedBoxes[a]);
         }
         spawnedBoxes.Clear();
+        ordersCompleted++;
         CreateOrder();
     }
 
@@ -111,7 +120,6 @@ public class GameManager : MonoBehaviour
             {
                 if (collectedBoxes[a] == spawnedBoxes[i])
                 {
-                    Debug.Log("Matching Box");
                     boxesCollected++;
                 }
             }
@@ -120,7 +128,11 @@ public class GameManager : MonoBehaviour
         if(boxesCollected == currentOrder.reqBoxes)
         {
             currentOrder.orderComplete = true;
-            Debug.Log("Order Complete");
+            Debug.Log("Order Delivered");
+        }
+        else
+        {
+            currentOrder.orderComplete = false;
         }
     }
 }
