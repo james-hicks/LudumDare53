@@ -85,6 +85,7 @@ public class TruckCollider : MonoBehaviour
 
     public void StartNewLoad()
     {
+        left = false;
         gameManager.CreateOrder();
     }
 }
