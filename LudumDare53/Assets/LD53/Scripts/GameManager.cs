@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
     public int boxesCollected;
+    public int[] boxTypes;
 
     private void Awake()
     {
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour
     {
         Order newOrder = new Order();
         int orderLength;
+        for (int i = 0; i < boxTypes.Length; i++)
+        {
+            boxTypes[i] = 0;
+        }
 
         if (ordersCompleted == 0)
         {
@@ -45,7 +50,9 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < orderLength; i++)
         {
-            newOrder.OrderRequirements.Add(boxes[Random.Range(0, boxes.Length)]);
+            int newBox = Random.Range(0, boxes.Length);
+            boxTypes[newBox]++;
+            newOrder.OrderRequirements.Add(boxes[newBox]);
         }
 
         newOrder.reqBoxes = newOrder.OrderRequirements.Count;

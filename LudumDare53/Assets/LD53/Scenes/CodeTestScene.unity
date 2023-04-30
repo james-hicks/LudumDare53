@@ -330,7 +330,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386371560}
-  m_LocalRotation: {x: 0.14781086, y: 0.00000001902601, z: -0.0000000028434846, w: 0.9890157}
+  m_LocalRotation: {x: 0.14781086, y: -0.00000001902601, z: 0.0000000028434846, w: 0.9890157}
   m_LocalPosition: {x: 0, y: 2.5, z: -2.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -774,12 +774,12 @@ PrefabInstance:
     - target: {fileID: 95115248232056131, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001902601
+      value: -0.00000001902601
       objectReference: {fileID: 0}
     - target: {fileID: 95115248232056131, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000028434852
+      value: 0.0000000028434852
       objectReference: {fileID: 0}
     - target: {fileID: 268258220812308443, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
         type: 3}
@@ -1291,18 +1291,6 @@ PrefabInstance:
       propertyPath: maxItems
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 8825985285970782498, guid: b56d5295b555d71439f9d0ce76ad4036,
-        type: 3}
-      propertyPath: boxes.Array.data[1]
-      value: 
-      objectReference: {fileID: 4254677883772798200, guid: 2ecda45139609784fa80a0d848745377,
-        type: 3}
-    - target: {fileID: 8825985285970782498, guid: b56d5295b555d71439f9d0ce76ad4036,
-        type: 3}
-      propertyPath: boxes.Array.data[2]
-      value: 
-      objectReference: {fileID: 4254677883772798200, guid: 2ecda45139609784fa80a0d848745377,
-        type: 3}
     - target: {fileID: 8825985285970782498, guid: b56d5295b555d71439f9d0ce76ad4036,
         type: 3}
       propertyPath: spawnPoints.Array.size

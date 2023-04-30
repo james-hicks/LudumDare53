@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd46f446e0773c743afcbd36ecbd7254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minItems: 1
   maxItems: 4
   boxes:
   - {fileID: 4254677883772798200, guid: 2ecda45139609784fa80a0d848745377, type: 3}
@@ -60,5 +59,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  ordersCompleted: 0
   spawnedBoxes: []
   boxesCollected: 0
+  boxTypes: 000000000000000000000000
