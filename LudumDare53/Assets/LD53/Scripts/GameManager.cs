@@ -51,7 +51,19 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < orderLength; i++)
         {
             int newBox = Random.Range(0, boxes.Length);
-            boxTypes[newBox]++;
+
+            if(newBox <= 2)
+            {
+                boxTypes[0]++;
+            }
+            else if(newBox <= 5) 
+            {
+                boxTypes[2]++;
+            }
+            else
+            {
+                boxTypes[1]++;
+            }
             newOrder.OrderRequirements.Add(boxes[newBox]);
         }
 
