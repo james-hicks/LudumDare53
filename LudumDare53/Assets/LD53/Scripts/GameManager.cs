@@ -193,6 +193,7 @@ public class GameManager : MonoBehaviour
         spawnedBoxes.Clear();
         if (!playedSuccessSound)
         {
+            Debug.Log("PlaySound");
             playedSuccessSound = true;
             soundManager.CompleteOrder.Invoke();
         }
