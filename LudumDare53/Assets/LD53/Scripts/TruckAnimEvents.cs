@@ -14,4 +14,9 @@ public class TruckAnimEvents : MonoBehaviour
     {
         truckCollider.StartNewLoad();
     }
+
+    public void SwapMaterial()
+    {
+        truckCollider.SwapMaterial();
+    }
 }

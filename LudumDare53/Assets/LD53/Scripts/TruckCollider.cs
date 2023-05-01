@@ -9,12 +9,16 @@ public class TruckCollider : MonoBehaviour
     public List<GameObject> collectedBoxes = new List<GameObject>();
     public bool PlayerInTruck;
     [SerializeField] private Animator truckAnimator;
+    [SerializeField] private Material[] containerMaterials;
+    [SerializeField] private MeshRenderer container;
+    [SerializeField] private MeshRenderer containerDoorL;
+    [SerializeField] private MeshRenderer containerDoorR;
     private bool left = false;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        
+        SwapMaterial();
     }
 
     private void Start()
@@ -87,5 +91,13 @@ public class TruckCollider : MonoBehaviour
     {
         left = false;
         gameManager.CreateOrder();
+    }
+
+    public void SwapMaterial()
+    {
+        int i = Random.Range(0, containerMaterials.Length);
+        container.material = containerMaterials[i];
+        containerDoorL.material = containerMaterials[i];
+        containerDoorR.material = containerMaterials[i];
     }
 }
