@@ -3,7 +3,32 @@ guid: e6119efb5702ad04d82f5e6e482a12fd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shelf
+    second: {fileID: 2100000, guid: 5c2e1b831f3a1e04b8061bc0c4a827e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Warehouse Wall
+    second: {fileID: 2100000, guid: b17696f18906f144ba1b33be2ee00726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_WarehouseDoor
+    second: {fileID: 2100000, guid: 8b3c4bb5f6063d047ae415c36eee703e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Warehouse_Frame
+    second: {fileID: 2100000, guid: fe23e0576436c0e45b95669181fc0cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpotLight
+    second: {fileID: 2100000, guid: e5736c0a1a62d034b89c345064184d0b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
