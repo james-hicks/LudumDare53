@@ -10,8 +10,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject PauseMenuUI;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Button defaultSelect;
+    [SerializeField] private Button AutoSelect;
+    [SerializeField] private GameObject LoadUI;
+    [SerializeField] private Slider slider;
     public bool isGamePaused = false;
     public bool GameOver = false;
+
+    private void Awake()
+    {
+        if(AutoSelect != null) AutoSelect.Select();
+    }
     public void PauseGame()
     {
         Time.timeScale = 0f;
@@ -31,6 +39,26 @@ public class MenuManager : MonoBehaviour
     public void LoadScene(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
+    }
+
+    public void LoadSceneSlow(string SceneName)
+    {
+        StartCoroutine(LoadAsync(SceneName));
+    }
+
+    private IEnumerator LoadAsync(string SceneName)
+    {
+        LoadUI.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
+
+        while (!operation.isDone)
+        {
+
+
+            slider.value = operation.progress;
+            yield return null;
+        }
+
     }
 
     public void QuitGame()
