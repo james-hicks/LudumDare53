@@ -1,14 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Transactions;
-using TMPro;
-using TreeEditor;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Editor;
-using UnityEngine.InputSystem.LowLevel;
 
 public class ForkliftPlayer : MonoBehaviour
 {
