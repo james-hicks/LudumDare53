@@ -20,6 +20,7 @@ public class ForkliftPlayer : MonoBehaviour
     [SerializeField] private float maxSteeringAngle;
     [SerializeField] private Transform respawnPoint;
     public float currentBreakForce;
+    public SoundManager soundManager;
     private float currrentSteeringAngle;
 
     [SerializeField] private WheelCollider frontLeft;
@@ -45,6 +46,12 @@ public class ForkliftPlayer : MonoBehaviour
     private float curLiftSpeed;
     private bool lastLiftUp = false;
     public float liftPercent;
+
+
+
+    private bool playedMotorSound = false;
+    private bool playedReverseSound = false;
+    private bool playedBrakeSound = false;
 
     private void Awake()
     {
@@ -74,6 +81,34 @@ public class ForkliftPlayer : MonoBehaviour
         frontLeft.motorTorque = moveInput.y * motorForce;
         frontRight.motorTorque = moveInput.y * motorForce;
         currentBreakForce = isBreaking ? breakForce : 0f;
+
+        
+        if(frontLeft.motorTorque < 0f)
+        {
+            if (!playedReverseSound)
+            {
+                playedReverseSound = true;
+                soundManager.OnReverse.Invoke();
+            }
+        }
+        else
+        {
+            if (playedReverseSound)
+            {
+                playedReverseSound = false;
+                soundManager.OnReverseStop.Invoke();
+            }
+        }
+
+        if (currentBreakForce > 0f && GetComponent<Rigidbody>().velocity.magnitude > 1f)
+        {
+            Debug.Log("Breaking");
+        }
+        else
+        {
+
+        }
+
         ApplyBreaking();
     }
 
