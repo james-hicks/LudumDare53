@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 {
 
     [Range(0, 10)][SerializeField] private int maxItems;
-    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject[] boxes;
     [SerializeField] private GameObject[] spawnPoints;
     [SerializeField] private GameObject[] usedSpawnPoints;
     public Order currentOrder;
-   
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI truckText;
 
     private bool timerActive = false;
 
@@ -39,11 +39,13 @@ public class GameManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
             TimeSpan time = TimeSpan.FromSeconds(timer);
-            timerText.text = time.ToString(@"mm\:ss");
-
             if (timer <= 0)
             {
                 Debug.Log("GAME OVER");
+            }
+            else
+            {
+                if (timerText != null) timerText.text = time.ToString(@"m\:ss");
             }
         }
     }
@@ -167,6 +169,7 @@ public class GameManager : MonoBehaviour
         }
         spawnedBoxes.Clear();
         ordersCompleted++;
+        if(truckText != null) truckText.text = ordersCompleted.ToString();
     }
 
     public void CheckCollectedBoxes(List<GameObject> collectedBoxes)
