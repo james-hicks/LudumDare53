@@ -200,7 +200,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9144802044998001155}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.18
+  m_Radius: 0.21
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -456,7 +456,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9144802045984487672}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.18
+  m_Radius: 0.21
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -560,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 95115248016290095, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14781086
+      value: 0.14781085
       objectReference: {fileID: 0}
     - target: {fileID: 95115248016290095, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 95115248016290095, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000074505797
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 268258220596476855, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1096,8 +1096,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.70432645, y: 0.06019704, z: 0.75123423}
-  m_Center: {x: -0.008450776, y: 0.036475614, z: 0.44318357}
+  m_Size: {x: 0.70432645, y: 0.06019704, z: 0.77454346}
+  m_Center: {x: -0.008450776, y: 0.036475614, z: 0.45483816}
 --- !u!65 &9144802044225917565
 BoxCollider:
   m_ObjectHideFlags: 0
