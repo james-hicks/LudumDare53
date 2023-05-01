@@ -38,6 +38,7 @@ public class ForkliftPlayer : MonoBehaviour
     private float curLiftSpeed;
     private bool lastLiftUp = false;
     public float liftPercent;
+    public Material material;
 
 
     private bool playedReverseSound = false;
@@ -101,6 +102,7 @@ public class ForkliftPlayer : MonoBehaviour
             {
                 playedBrakeSound = true;
                 soundManager.OnBrake.Invoke();
+                material.EnableKeyword("_EMISSION");
             }
         }
         else
@@ -109,6 +111,7 @@ public class ForkliftPlayer : MonoBehaviour
             {
                 playedBrakeSound = false;
                 soundManager.OnBrakeStop.Invoke();
+                material.DisableKeyword("_EMISSION");
             }
         }
         if(liftDown || liftUp)
