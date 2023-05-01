@@ -1,13 +1,17 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
 
     [Range(0, 10)][SerializeField] private int maxItems;
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject[] boxes;
     [SerializeField] private GameObject[] spawnPoints;
     [SerializeField] private GameObject[] usedSpawnPoints;
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
         if (timerActive)
         {
             timer -= Time.deltaTime;
+            TimeSpan time = TimeSpan.FromSeconds(timer);
+            timerText.text = time.ToString(@"mm\:ss");
 
             if (timer <= 0)
             {
@@ -56,11 +62,11 @@ public class GameManager : MonoBehaviour
             orderLength = 1;
         }else if (ordersCompleted <= 2)
         {
-            orderLength = Random.Range(2,3);
+            orderLength = Random.Range(2,4);
         }
         else
         {
-            orderLength = Random.Range(2, maxItems);
+            orderLength = Random.Range(2, maxItems + 1);
         }
 
 
@@ -68,7 +74,7 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < orderLength; i++)
         {
-            int newBox = Random.Range(0, boxes.Length);
+            int newBox = Random.Range(0, boxes.Length + 1);
 
             if(newBox <= 2)
             {
@@ -104,7 +110,7 @@ public class GameManager : MonoBehaviour
                 goodSpawnPoint = true;
                 
                 Debug.Log("Attempting SpawnPoints");
-                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length+1)];
 
                 for (int b = 0; b < usedSpawnPoints.Length; b++)
                 {
@@ -138,6 +144,7 @@ public class GameManager : MonoBehaviour
             {
                 timer = 180f; // 3 mins
             }
+
 
             timerActive = true;
 
