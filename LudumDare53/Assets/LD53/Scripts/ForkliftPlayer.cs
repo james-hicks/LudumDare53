@@ -47,7 +47,7 @@ public class ForkliftPlayer : MonoBehaviour
     private bool lastLiftUp = false;
     public float liftPercent;
 
-
+    private bool GamePaused = true;
 
     private bool playedReverseSound = false;
     private bool playedBrakeSound = false;
@@ -62,8 +62,14 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) Cursor.lockState = CursorLockMode.Locked;
-        else if (Input.GetKeyDown(KeyCode.Mouse1)) Cursor.lockState = CursorLockMode.None;
+        if (GamePaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     private void FixedUpdate()
