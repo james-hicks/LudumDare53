@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBreaking: 0
   motorForce: 300
-  breakForce: 100
+  breakForce: 0.000001
   maxSteeringAngle: 50
   respawnPoint: {fileID: 0}
   currentBreakForce: 0
@@ -522,7 +522,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.13
   m_SuspensionSpring:
-    spring: 55000
+    spring: 35000
     damper: 5500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
@@ -722,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 973836662599514316, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16071764
+      value: 0.16071762
       objectReference: {fileID: 0}
     - target: {fileID: 973836662599514316, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -854,6 +854,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9144802045947774292}
     m_Modifications:
+    - target: {fileID: 826705079292067820, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3338460400357476064, guid: e8a84550f842f254daf567952f51bcd9,
         type: 3}
       propertyPath: m_RootOrder
@@ -909,10 +914,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4369765111620152272, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300855440235719114, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6170180284719556681, guid: e8a84550f842f254daf567952f51bcd9,
         type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367722488774848463, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a84550f842f254daf567952f51bcd9, type: 3}
