@@ -30,4 +30,12 @@ public class HamsterNPC : MonoBehaviour
             yield return null;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Debug.Log("Hit a Hamster!");
+        }
+    }
 }
