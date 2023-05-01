@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4369523416017837984}
   - component: {fileID: 5886502826355963332}
   - component: {fileID: 5959789680362294174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.01, z: -3.08}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9123903118855494075}
   - component: {fileID: 7036190607173118433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TopRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,8 +182,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014629419505646433}
-  m_LocalRotation: {x: -0.001168837, y: -0, z: -0, w: 0.9999994}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000076293945}
+  m_LocalRotation: {x: 0.18606786, y: 0.000000059604645, z: 0.000000014901161, w: 0.982537}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000038146973}
   m_LocalScale: {x: 0.9999996, y: 1, z: 0.9999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 533399658823032273}
   - component: {fileID: 859643435663918339}
   - component: {fileID: 5972959107903963493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.01, z: -3.08}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 1770119401343412327}
   - component: {fileID: 2051767752438960177}
   - component: {fileID: 7874026609731133104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.01, z: -3.08}
+  m_FollowOffset: {x: 0, y: 2.5, z: -3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -562,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973836662379203744}
   - component: {fileID: 1492723253769015657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiddleRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8805420436558071607}
-  m_LocalRotation: {x: -0.07570255, y: 0.000000059604638, z: -0, w: 0.99713045}
+  m_LocalRotation: {x: 0.16071762, y: 0.000000059604638, z: -0.000000014901159, w: 0.9870004}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000019073486}
   m_LocalScale: {x: 0.9999996, y: 1, z: 0.9999996}
   m_ConstrainProportionsScale: 0
@@ -640,7 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326091916571944692}
   - component: {fileID: 6297403201106286723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BottomRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,8 +654,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8884580507995914546}
-  m_LocalRotation: {x: -0.055828046, y: 0.000000029802319, z: 0.0000000074505797,
-    w: 0.9984404}
+  m_LocalRotation: {x: 0.1734615, y: -0.000000029802322, z: 0.000000007450581, w: 0.98484075}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000019073486}
   m_LocalScale: {x: 0.9999996, y: 1, z: 0.9999996}
   m_ConstrainProportionsScale: 0
@@ -826,10 +825,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.001
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -888,10 +887,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.001
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -1035,6 +1034,7 @@ MonoBehaviour:
   sceneManager: {fileID: 0}
   HUDAnimator: {fileID: 5502472049834578586}
   liftPercent: 0
+  material: {fileID: 2100000, guid: 33348b63397f9c144b54b6584994d2b7, type: 2}
 --- !u!1 &9144802045984487672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,10 +1085,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.001
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -1147,10 +1147,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.001
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.001
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.2
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -1251,6 +1251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCam
       objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759692, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_Follow
@@ -1264,17 +1269,17 @@ PrefabInstance:
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_YAxis.Value
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_XAxis.m_MaxSpeed
-      value: 0.3
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_YAxis.m_MaxSpeed
-      value: 0.005
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1289,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_XAxis.m_SpeedMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1299,7 +1304,7 @@ PrefabInstance:
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_YAxis.m_SpeedMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1318,8 +1323,13 @@ PrefabInstance:
       objectReference: {fileID: 6297403201106286723}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
-      propertyPath: m_YAxis.m_InvertInput
+      propertyPath: m_XAxis.m_InvertInput
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_YAxis.m_InvertInput
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759695, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1334,12 +1344,12 @@ PrefabInstance:
     - target: {fileID: 417961835357759695, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759695, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.0800004
+      value: -3.0000005
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759695, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
@@ -1510,6 +1520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TrackedObjectOffset.y
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095987213436673252, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_CollideAgainst.m_Bits
+      value: 6145
       objectReference: {fileID: 0}
     - target: {fileID: 9123903118937320919, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
