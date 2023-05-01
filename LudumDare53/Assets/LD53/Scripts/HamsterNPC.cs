@@ -65,6 +65,7 @@ public class HamsterNPC : MonoBehaviour
     {
         if (other.tag == "Player" && !KnockedDown)
         {
+            FindObjectOfType<GameManager>().HamstersHit++;
             KnockedDown = true;
         }
     }

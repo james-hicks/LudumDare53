@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private bool timerActive = false;
     [SerializeField] private GameObject GameOverScreen;
     [SerializeField] private TextMeshProUGUI GameOverText;
+    [SerializeField] private TextMeshProUGUI HamstersHitText;
+    public int HamstersHit;
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
@@ -68,7 +70,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
-        GameOverText.text = "You filled " + ordersCompleted.ToString() + " orders before you were fired. . .";
+        GameOverText.text = "Deliveries Made: " + ordersCompleted.ToString();
+        HamstersHitText.text = "Employees Hit: " + HamstersHit.ToString();
         GameOverScreen.SetActive(true);
     }
 
