@@ -8983,6 +8983,11 @@ PrefabInstance:
       objectReference: {fileID: 964926580}
     - target: {fileID: 8825985285970782498, guid: b56d5295b555d71439f9d0ce76ad4036,
         type: 3}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 742583757}
+    - target: {fileID: 8825985285970782498, guid: b56d5295b555d71439f9d0ce76ad4036,
+        type: 3}
       propertyPath: GameOverScreen
       value: 
       objectReference: {fileID: 1376267599}
@@ -39579,6 +39584,18 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df88e1f3b92a8aa45800f339559c78ba, type: 3}
+--- !u!114 &742583757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3017341738579440293, guid: a9892585064a79f4cb12278142e34cf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1376267598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &742957802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41531,7 +41548,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785478436}
-  m_LocalRotation: {x: -0.039476402, y: -0.70600396, z: -0.0394764, w: 0.706004}
+  m_LocalRotation: {x: -0.039476395, y: -0.70600396, z: -0.03947639, w: 0.706004}
   m_LocalPosition: {x: -15.42, y: 1.31, z: -28.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -86379,6 +86396,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: e2149a92f26e84047947eb7518d91fed, type: 2}
   defaultSelect: {fileID: 516372703}
   isGamePaused: 0
+  GameOver: 0
 --- !u!1001 &1670238568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105003,7 +105021,7 @@ PrefabInstance:
     - target: {fileID: 326091916571944692, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.055828057
+      value: -0.055828046
       objectReference: {fileID: 0}
     - target: {fileID: 326091916571944692, guid: 77137c08ae02e6b4fa7aa6a694dd035c,
         type: 3}
@@ -109608,7 +109626,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4281467161157666791, guid: e2149a92f26e84047947eb7518d91fed,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f39cd9f9815436048a7b0f0b73a7e563, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 924359ae90fa68a4f8e91dc8200c2c28, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
