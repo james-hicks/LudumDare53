@@ -102,7 +102,6 @@ public class ForkliftPlayer : MonoBehaviour
             {
                 playedBrakeSound = true;
                 soundManager.OnBrake.Invoke();
-                material.EnableKeyword("_EMISSION");
             }
         }
         else
@@ -111,7 +110,7 @@ public class ForkliftPlayer : MonoBehaviour
             {
                 playedBrakeSound = false;
                 soundManager.OnBrakeStop.Invoke();
-                material.DisableKeyword("_EMISSION");
+
             }
         }
         if(liftDown || liftUp)
@@ -227,12 +226,20 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void OnBreakingPress(InputValue value)
     {
-        if (!sceneManager.isGamePaused) isBreaking = true;
+        if (!sceneManager.isGamePaused)
+        {
+            isBreaking = true;
+            material.EnableKeyword("_EMISSION");
+        }
     }
 
     private void OnBreakingRelease(InputValue value)
     {
-        if (!sceneManager.isGamePaused) isBreaking = false;
+        if (!sceneManager.isGamePaused)
+        {
+            isBreaking = false;
+            material.DisableKeyword("_EMISSION");
+        }
     }
 
     private void OnLiftUpPress(InputValue value)
