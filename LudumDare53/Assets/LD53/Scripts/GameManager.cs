@@ -12,16 +12,34 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] spawnPoints;
     [SerializeField] private GameObject[] usedSpawnPoints;
     public Order currentOrder;
-    [SerializeField] private int ordersCompleted = 0; 
+   
+
+    private bool timerActive = false;
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
     public int boxesCollected;
     public int[] boxTypes;
+    private int ordersCompleted = 0;
+    public float timer;
+
 
     private void Awake()
     {
         CreateOrder();
+    }
+
+    private void Update()
+    {
+        if (timerActive)
+        {
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                Debug.Log("GAME OVER");
+            }
+        }
     }
 
     public void CreateOrder()
@@ -109,6 +127,20 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            if (ordersCompleted <= 4)
+            {
+                timer = 300f; // 5 mins
+                
+            } else if(ordersCompleted < 6)
+            {
+                timer = 240f; // 4 mins
+            } else
+            {
+                timer = 180f; // 3 mins
+            }
+
+            timerActive = true;
+
             spawnedBoxes.Add(Instantiate(currentOrder.OrderRequirements[i], spawnPoint.transform.position, Quaternion.identity));
         }
     }
@@ -116,6 +148,7 @@ public class GameManager : MonoBehaviour
     public void EndOrder()
     {
         Debug.Log("Finished Order");
+        timerActive = false;
         for (int i = 0; i < usedSpawnPoints.Length; i++)
         {
             usedSpawnPoints[i] = null;
