@@ -7,13 +7,27 @@ public class HamsterNPC : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private Transform[] patrolPoints;
     [SerializeField] private float patrolPointReachedDistance = 3f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource source;
     private int _patrolIndex;
+    private IEnumerator currentState;
+
+    public bool KnockedDown;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        StartCoroutine(PatrolState());
+        ChangeState(PatrolState());
     }
+
+    private void ChangeState(IEnumerator newState)
+    {
+        if(currentState != null) StopCoroutine(currentState);
+
+        currentState = newState;
+        StartCoroutine(currentState);
+    }
+
     private IEnumerator PatrolState()
     {
         Transform patrolPoint = patrolPoints[Random.Range(0, patrolPoints.Length)];
@@ -24,18 +38,39 @@ public class HamsterNPC : MonoBehaviour
 
             if (patrolDistance < patrolPointReachedDistance) patrolPoint = patrolPoints[Random.Range(0, patrolPoints.Length)];
 
-
+            if(KnockedDown)
+            {
+                ChangeState(GetUpState());
+            }
             agent.SetDestination(patrolPoint.position);
             Debug.DrawLine(transform.position, patrolPoint.position, Color.blue);
             yield return null;
         }
     }
 
+    private IEnumerator GetUpState()
+    {
+        animator.SetTrigger("Hit");
+        source.Play();
+        while (KnockedDown)
+        {
+            agent.isStopped = true;
+            yield return null;
+        }
+        agent.isStopped = false;
+        ChangeState(PatrolState());
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !KnockedDown)
         {
-            Debug.Log("Hit a Hamster!");
+            KnockedDown = true;
         }
+    }
+
+    public void UnKnockDown()
+    {
+        KnockedDown = false;
     }
 }
