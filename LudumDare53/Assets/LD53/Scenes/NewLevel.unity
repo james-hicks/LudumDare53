@@ -325,6 +325,114 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 688231735}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4928411}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 322332447}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1385213099}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1831409381}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 1411967195}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 1758803537}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 1544315227}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[7]
+      value: 
+      objectReference: {fileID: 1654355064}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[8]
+      value: 
+      objectReference: {fileID: 349504131}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[9]
+      value: 
+      objectReference: {fileID: 937456043}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[10]
+      value: 
+      objectReference: {fileID: 1143951583}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[11]
+      value: 
+      objectReference: {fileID: 941212724}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[12]
+      value: 
+      objectReference: {fileID: 2034977704}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[13]
+      value: 
+      objectReference: {fileID: 4928411}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[14]
+      value: 
+      objectReference: {fileID: 322332447}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[15]
+      value: 
+      objectReference: {fileID: 1385213099}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[16]
+      value: 
+      objectReference: {fileID: 1831409381}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[17]
+      value: 
+      objectReference: {fileID: 1411967195}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[18]
+      value: 
+      objectReference: {fileID: 1758803537}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[19]
+      value: 
+      objectReference: {fileID: 1544315227}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[20]
+      value: 
+      objectReference: {fileID: 1654355064}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[21]
+      value: 
+      objectReference: {fileID: 349504131}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[22]
+      value: 
+      objectReference: {fileID: 937456043}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[23]
+      value: 
+      objectReference: {fileID: 1143951583}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[24]
+      value: 
+      objectReference: {fileID: 941212724}
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.data[25]
+      value: 
+      objectReference: {fileID: 2034977704}
     - target: {fileID: 791537213267648763, guid: cc404d2140c038a4a86fea92b3f9f436,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3549,6 +3657,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 688231735}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 791537213267648763, guid: cc404d2140c038a4a86fea92b3f9f436,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12886,55 +12998,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 688231735}
     m_Modifications:
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 4928411}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 322332447}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1385213099}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1831409381}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1411967195}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1758803537}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[6]
       value: 
       objectReference: {fileID: 1544315227}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[7]
       value: 
       objectReference: {fileID: 1654355064}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[8]
       value: 
       objectReference: {fileID: 349504131}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[9]
       value: 
       objectReference: {fileID: 937456043}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[10]
       value: 
       objectReference: {fileID: 1143951583}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[11]
       value: 
       objectReference: {fileID: 941212724}
-    - target: {fileID: 1341509185, guid: cc404d2140c038a4a86fea92b3f9f436, type: 3}
+    - target: {fileID: 0}
       propertyPath: patrolPoints.Array.data[12]
       value: 
       objectReference: {fileID: 2034977704}
@@ -17185,6 +17297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 688231735}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 791537213267648763, guid: cc404d2140c038a4a86fea92b3f9f436,
         type: 3}
       propertyPath: m_LocalPosition.x
