@@ -1268,6 +1268,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
+      propertyPath: m_XAxis.m_MaxSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_YAxis.m_MaxSpeed
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_XAxis.m_AccelTime
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_XAxis.m_DecelTime
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_XAxis.m_SpeedMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_YAxis.m_AccelTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_YAxis.m_SpeedMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
       propertyPath: m_Rigs.Array.data[0]
       value: 
       objectReference: {fileID: 7036190607173118433}
@@ -1281,6 +1316,11 @@ PrefabInstance:
       propertyPath: m_Rigs.Array.data[2]
       value: 
       objectReference: {fileID: 6297403201106286723}
+    - target: {fileID: 417961835357759694, guid: 63607b58c587c844fb724a719f3a1ce1,
+        type: 3}
+      propertyPath: m_YAxis.m_InvertInput
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 417961835357759695, guid: 63607b58c587c844fb724a719f3a1ce1,
         type: 3}
       propertyPath: m_RootOrder
