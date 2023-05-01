@@ -48,7 +48,15 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 50aae00f7e0b7aa4ea83bc8271a35e19
+    name: Forklift Audio
+  - guid: 4756c2e3a6ad14e43a2c1ada0dd14cc1
+    name: Master
+  - guid: b49c5c35cc7d463458b55b43ad824513
+    name: Music
+  - guid: 772e8ac711f7c414d897135838b02c62
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 0fa1947697b85044f95f97cfc912f538

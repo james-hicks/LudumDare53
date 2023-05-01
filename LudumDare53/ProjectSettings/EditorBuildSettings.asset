@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LD53/Scenes/TITLE_Menu.unity
+    path: Assets/LD53/Scenes/MainMenu.unity
     guid: ae9192bb7b496f24aa4050719124c472
   - enabled: 1
     path: Assets/LD53/Scenes/Gameplaytest2.0.unity

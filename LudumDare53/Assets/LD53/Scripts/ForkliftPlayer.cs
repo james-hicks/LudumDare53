@@ -42,12 +42,12 @@ public class ForkliftPlayer : MonoBehaviour
     bool liftDown;
 
     [Header("HUD")]
+    [SerializeField] private MenuManager sceneManager;
     [SerializeField] private Animator HUDAnimator;
     private float curLiftSpeed;
     private bool lastLiftUp = false;
     public float liftPercent;
 
-    private bool GamePaused = true;
 
     private bool playedReverseSound = false;
     private bool playedBrakeSound = false;
@@ -62,12 +62,14 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (GamePaused)
+        if (sceneManager.isGamePaused)
         {
+
             Cursor.lockState = CursorLockMode.None;
         }
         else
         {
+
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
@@ -231,47 +233,60 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void OnBreakingPress(InputValue value)
     {
-        isBreaking = true;
+        if (!sceneManager.isGamePaused) isBreaking = true;
     }
 
     private void OnBreakingRelease(InputValue value)
     {
-        isBreaking = false;
+        if (!sceneManager.isGamePaused) isBreaking = false;
     }
 
     private void OnLiftUpPress(InputValue value)
     {
-        liftUp = true;
+        if (!sceneManager.isGamePaused) liftUp = true;
     }
 
     private void OnLiftUpRelease(InputValue value)
     {
-        liftUp = false;
+        if (!sceneManager.isGamePaused) liftUp = false;
     }
 
     private void OnLiftDownPress(InputValue value)
     {
-        liftDown = true;
+        if (!sceneManager.isGamePaused) liftDown = true;
     }
 
     private void OnLiftDownRelease(InputValue value)
     {
-        liftDown = false;
+        if (!sceneManager.isGamePaused) liftDown = false;
     }
 
     private void OnReset(InputValue value)
     {
-        gameObject.transform.position = respawnPoint.position;
-        gameObject.transform.rotation = respawnPoint.rotation;
+        if (!sceneManager.isGamePaused)
+        {
+            gameObject.transform.position = respawnPoint.position;
+            gameObject.transform.rotation = respawnPoint.rotation;
+        }
+
     }
 
     private void OnSeeDeliveryPress(InputValue value)
     {
-        HUDAnimator.SetBool("ShowNote", true);
+        if (!sceneManager.isGamePaused) HUDAnimator.SetBool("ShowNote", true);
     }
     private void OnSeeDeliveryRelease(InputValue value)
     {
-        HUDAnimator.SetBool("ShowNote", false);
+        if (!sceneManager.isGamePaused) HUDAnimator.SetBool("ShowNote", false);
+    }
+
+    public void OnPauseGame(InputValue value)
+    {
+        Debug.Log("Pause Button Pressed");
+        if(!sceneManager.isGamePaused)
+        {
+            sceneManager.PauseGame();
+        }
     }
     #endregion
 }
