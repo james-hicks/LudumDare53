@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Button defaultSelect;
     public bool isGamePaused = false;
+    public bool GameOver = false;
     public void PauseGame()
     {
         Time.timeScale = 0f;

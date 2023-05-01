@@ -62,7 +62,7 @@ public class ForkliftPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (sceneManager.isGamePaused)
+        if (sceneManager.isGamePaused || sceneManager.GameOver)
         {
 
             Cursor.lockState = CursorLockMode.None;
@@ -283,7 +283,7 @@ public class ForkliftPlayer : MonoBehaviour
     public void OnPauseGame(InputValue value)
     {
         Debug.Log("Pause Button Pressed");
-        if(!sceneManager.isGamePaused)
+        if(!sceneManager.isGamePaused || !sceneManager.GameOver)
         {
             sceneManager.PauseGame();
         }

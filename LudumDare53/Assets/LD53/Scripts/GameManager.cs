@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour
     public Order currentOrder;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI truckText;
-
+    private SoundManager soundManager;
+    private MenuManager menuManager;
     private bool timerActive = false;
+    [SerializeField] private GameObject GameOverScreen;
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
@@ -27,9 +29,14 @@ public class GameManager : MonoBehaviour
     private int ordersCompleted = 0;
     public float timer;
 
+    private bool playedSuccessSound;
+    private bool playedFailSound;
 
     private void Awake()
     {
+        Time.timeScale = 1.0f;
+        soundManager = FindObjectOfType<SoundManager>();
+        menuManager = GetComponent<MenuManager>();
         CreateOrder();
     }
 
@@ -41,13 +48,27 @@ public class GameManager : MonoBehaviour
             TimeSpan time = TimeSpan.FromSeconds(timer);
             if (timer <= 0)
             {
-                Debug.Log("GAME OVER");
+                if (!playedFailSound)
+                {
+                    menuManager.GameOver = true;
+                    Debug.Log("GAME OVER");
+                    GameOver();
+                    playedFailSound = true;
+                    soundManager.FailOrder.Invoke();
+                }
             }
             else
             {
                 if (timerText != null) timerText.text = time.ToString(@"m\:ss");
             }
         }
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0f;
+        soundManager.mainMusic.mute = true;
+        GameOverScreen.SetActive(true);
     }
 
     public void CreateOrder()
@@ -101,6 +122,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartNewOrder()
     {
+        playedSuccessSound = false;
         for (int i = 0; i < currentOrder.OrderRequirements.Count; i++)
         {
             
@@ -168,6 +190,11 @@ public class GameManager : MonoBehaviour
             Destroy(spawnedBoxes[a]);
         }
         spawnedBoxes.Clear();
+        if (!playedSuccessSound)
+        {
+            playedSuccessSound = true;
+            soundManager.CompleteOrder.Invoke();
+        }
         ordersCompleted++;
         if(truckText != null) truckText.text = ordersCompleted.ToString();
     }
