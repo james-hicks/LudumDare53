@@ -78,11 +78,11 @@ public class GameManager : MonoBehaviour
         {
             int newBox = Random.Range(0, boxes.Length);
 
-            if(newBox <= 2)
+            if(newBox <= 3)
             {
                 boxTypes[0]++;
             }
-            else if(newBox <= 5) 
+            else if(newBox <= 6) 
             {
                 boxTypes[1]++;
             }
