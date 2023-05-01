@@ -23,20 +23,28 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (mainMusic.time == mainMusic.clip.length)
+        if (FindObjectOfType<MenuManager>().GameOver)
         {
-            mainMusic.clip = musics[index];
-            mainMusic.Play();
-            if(index == 1)
+            mainMusic.Stop();
+        }
+        else
+        {
+            if (mainMusic.time == mainMusic.clip.length)
             {
-                index = 2;
-            } else if(index == 2)
-            {
-                index = 0;
-            }
-            else
-            {
-                index = 1;
+                mainMusic.clip = musics[index];
+                mainMusic.Play();
+                if (index == 1)
+                {
+                    index = 2;
+                }
+                else if (index == 2)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index = 1;
+                }
             }
         }
     }

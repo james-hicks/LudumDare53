@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private MenuManager menuManager;
     private bool timerActive = false;
     [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private TextMeshProUGUI GameOverText;
 
     [Header("Debug")]
     public List<GameObject> spawnedBoxes = new List<GameObject>();
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
-        soundManager.mainMusic.mute = true;
+        GameOverText.text = "You filled " + ordersCompleted.ToString() + " orders before you were fired. . .";
         GameOverScreen.SetActive(true);
     }
 
