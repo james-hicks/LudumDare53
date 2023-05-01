@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < orderLength; i++)
         {
-            int newBox = Random.Range(0, boxes.Length + 1);
+            int newBox = Random.Range(0, boxes.Length);
 
             if(newBox <= 2)
             {
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
                 goodSpawnPoint = true;
                 
                 Debug.Log("Attempting SpawnPoints");
-                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length+1)];
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
                 for (int b = 0; b < usedSpawnPoints.Length; b++)
                 {
