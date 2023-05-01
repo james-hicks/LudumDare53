@@ -49,9 +49,9 @@ public class ForkliftPlayer : MonoBehaviour
 
 
 
-    private bool playedMotorSound = false;
     private bool playedReverseSound = false;
     private bool playedBrakeSound = false;
+    private bool playedLiftSound = false;
 
     private void Awake()
     {
@@ -72,18 +72,13 @@ public class ForkliftPlayer : MonoBehaviour
         HandleSteering();
         UpdateWheels();
         MoveLift();
+        PlaySounds(); 
+
     }
 
-
-
-    private void HandleMotor()
+    private void PlaySounds()
     {
-        frontLeft.motorTorque = moveInput.y * motorForce;
-        frontRight.motorTorque = moveInput.y * motorForce;
-        currentBreakForce = isBreaking ? breakForce : 0f;
-
-        
-        if(frontLeft.motorTorque < 0f)
+        if (frontLeft.motorTorque < 0f)
         {
             if (!playedReverseSound)
             {
@@ -103,11 +98,58 @@ public class ForkliftPlayer : MonoBehaviour
         if (currentBreakForce > 0f && GetComponent<Rigidbody>().velocity.magnitude > 1f)
         {
             Debug.Log("Breaking");
+            if (!playedBrakeSound)
+            {
+                playedBrakeSound = true;
+                soundManager.OnBrake.Invoke();
+            }
         }
         else
         {
-
+            if (playedBrakeSound)
+            {
+                playedBrakeSound = false;
+                soundManager.OnBrakeStop.Invoke();
+            }
         }
+        if(liftDown || liftUp)
+        {
+            if (liftPercent == 1 || liftPercent == 0)
+            {
+                if (playedLiftSound)
+                {
+                    soundManager.OnForkliftStop.Invoke();
+                    playedLiftSound = false;
+                }
+            }
+            else
+            {
+                if (!playedLiftSound)
+                {
+                    soundManager.OnForklift.Invoke();
+                    playedLiftSound = true;
+                }
+            }
+        }
+        else
+        {
+            if (playedLiftSound)
+            {
+                soundManager.OnForkliftStop.Invoke();
+                playedLiftSound = false;
+            }
+        }
+
+    }
+
+    private void HandleMotor()
+    {
+        frontLeft.motorTorque = moveInput.y * motorForce;
+        frontRight.motorTorque = moveInput.y * motorForce;
+        currentBreakForce = isBreaking ? breakForce : 0f;
+
+        
+
 
         ApplyBreaking();
     }
@@ -172,6 +214,7 @@ public class ForkliftPlayer : MonoBehaviour
 
         }
         liftPercent = Mathf.Clamp(liftPercent, 0, 1);
+
     }
 
     #region Inputs

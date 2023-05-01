@@ -11,6 +11,9 @@ public class SoundManager : MonoBehaviour
     public UnityEvent OnBrake;
     public UnityEvent OnBrakeStop;
 
+    public UnityEvent OnForklift;
+    public UnityEvent OnForkliftStop;
+
     [SerializeField] private AudioSource mainMusic;
     [SerializeField] private AudioClip[] musics;
     private int index = 1;
