@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             {
                 timer = 300f; // 5 mins
                 
-            } else if(ordersCompleted < 6)
+            } else if(ordersCompleted <= 6)
             {
                 timer = 240f; // 4 mins
             } else
