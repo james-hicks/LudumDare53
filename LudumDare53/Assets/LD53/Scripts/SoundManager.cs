@@ -29,8 +29,9 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            if (mainMusic.time == mainMusic.clip.length)
+            if (!mainMusic.isPlaying)
             {
+                mainMusic.Stop();
                 mainMusic.clip = musics[index];
                 mainMusic.Play();
                 if (index == 1)
