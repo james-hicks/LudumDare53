@@ -795,11 +795,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.66979986
       objectReference: {fileID: 0}
-    - target: {fileID: 6832688795169158601, guid: cc404d2140c038a4a86fea92b3f9f436,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 6990901935758745332, guid: cc404d2140c038a4a86fea92b3f9f436,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28129,10 +28124,25 @@ PrefabInstance:
       propertyPath: CompleteOrder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5300855440235719114, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300855440235719114, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6170180284719556681, guid: e8a84550f842f254daf567952f51bcd9,
         type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367722488774848463, guid: e8a84550f842f254daf567952f51bcd9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8a84550f842f254daf567952f51bcd9, type: 3}

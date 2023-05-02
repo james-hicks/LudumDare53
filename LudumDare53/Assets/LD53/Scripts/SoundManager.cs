@@ -27,26 +27,5 @@ public class SoundManager : MonoBehaviour
         {
             mainMusic.Stop();
         }
-        else
-        {
-            if (!mainMusic.isPlaying)
-            {
-                mainMusic.Stop();
-                mainMusic.clip = musics[index];
-                mainMusic.Play();
-                if (index == 1)
-                {
-                    index = 2;
-                }
-                else if (index == 2)
-                {
-                    index = 0;
-                }
-                else
-                {
-                    index = 1;
-                }
-            }
-        }
     }
 }
